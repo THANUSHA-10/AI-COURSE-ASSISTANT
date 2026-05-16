@@ -15,8 +15,20 @@ with st.sidebar:
 # 3. Initialize Conversation History
 if "messages" not in st.session_state:
     st.session_state.messages = [
-        {"role": "system", "content": "You are a helpful AI Assistant for an AI university course. Answer questions accurately based on typical academic policies (e.g., 10% penalty per late day, final exam is 30% of grade). If you do not know an answer, politely ask the student to check the syllabus or email the professor. Do not hallucinate data."}
+        {
+            "role": "system", 
+            "content": """You are the AI Assistant for ARTIFICIAL INTELLIGENCE BOOTCAMP]. 
+            Here are the official rules for this specific course:
+            - Assignment 1 Due: [16 MAY 2026]
+            - Midterm Exam Date: [NOT APPLICABLE]
+            - Final Project Due: [NA]
+            - Grading Breakdown: Assignments are [NA]%, Midterm is [NA]%, Final Project is [NA]%.
+            - Late Policy: [10% off per day late].
+            - Professor Email: [-].
+            If a student asks something not listed here, say: 'I don't have that information. Please ask the professor.'"""
+        }
     ]
+
 
 # 4. Display Existing Messages
 for message in st.session_state.messages:
